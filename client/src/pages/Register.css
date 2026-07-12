@@ -1,0 +1,196 @@
+/* ===================== REGISTER CARD ===================== */
+.register-card {
+  text-align: center;
+}
+
+.register-logo-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  background: rgba(108, 60, 224, 0.08);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid rgba(108, 60, 224, 0.12);
+}
+
+.register-title {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e1e2f;
+  margin: 0 0 6px;
+  letter-spacing: -0.5px;
+}
+
+.register-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 28px;
+}
+
+/* Server Error Banner */
+.register-server-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  color: #dc2626;
+  font-size: 13px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Success Banner */
+.register-success {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  color: #16a34a;
+  font-size: 13px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* ===================== PASSWORD CHECKS ===================== */
+.register-password-checks {
+  margin: -8px 0 20px;
+  padding: 12px 14px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #f3f4f6;
+}
+
+.register-password-checks-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #4b5563;
+  margin: 0 0 8px;
+  text-align: left;
+}
+
+.register-password-checks-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.register-check {
+  font-size: 11.5px;
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s ease;
+}
+
+.register-check--pass {
+  color: #16a34a;
+}
+
+/* ===================== TERMS ===================== */
+.register-terms {
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.register-terms-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #4b5563;
+  cursor: pointer;
+  user-select: none;
+  flex-wrap: wrap;
+}
+
+.register-terms-label input[type="checkbox"] {
+  display: none;
+}
+
+.register-checkbox-custom {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  border-radius: 4px;
+  border: 1.5px solid #d1d5db;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.register-terms-label input[type="checkbox"]:checked + .register-checkbox-custom {
+  background: #6c3ce0;
+  border-color: #6c3ce0;
+}
+
+.register-terms-label input[type="checkbox"]:checked + .register-checkbox-custom::after {
+  content: '';
+  width: 5px;
+  height: 9px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 2px;
+}
+
+.register-terms-link {
+  color: #6c3ce0;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.register-terms-link:hover {
+  text-decoration: underline;
+}
+
+.register-terms--error .register-checkbox-custom {
+  border-color: #ef4444;
+}
+
+.register-terms-error {
+  display: block;
+  font-size: 12px;
+  color: #ef4444;
+  margin-top: 5px;
+  padding-left: 26px;
+}
+
+/* Switch link */
+.register-switch {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 24px 0 0;
+}
+
+.register-switch-link {
+  color: #6c3ce0;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.register-switch-link:hover {
+  color: #5b2cc4;
+  text-decoration: underline;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 480px) {
+  .register-password-checks-grid {
+    grid-template-columns: 1fr;
+  }
+}
