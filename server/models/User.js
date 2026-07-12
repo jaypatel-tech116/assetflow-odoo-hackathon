@@ -38,6 +38,7 @@ const User = sequelize.define('User', {
   },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   designation: { type: DataTypes.STRING(100), allowNull: true },
   phone: { type: DataTypes.STRING(20), allowNull: true },
@@ -48,6 +49,8 @@ const User = sequelize.define('User', {
 >>>>>>> origin/prince
 =======
 >>>>>>> origin/jay
+=======
+>>>>>>> origin/kashyap
   department_id: {
     type: DataTypes.INTEGER,
     allowNull: true,
@@ -58,6 +61,7 @@ const User = sequelize.define('User', {
     allowNull: false,
     defaultValue: 'Active',
   },
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   phone: {
@@ -84,6 +88,8 @@ const User = sequelize.define('User', {
     defaultValue: null,
   },
 >>>>>>> origin/jay
+=======
+>>>>>>> origin/kashyap
 }, {
   tableName: 'users',
   timestamps: true,

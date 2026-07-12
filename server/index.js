@@ -4,6 +4,7 @@ const express = require('express');
 const cors = require('cors');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const sequelize = require('./config/database');
 const authRoutes = require('./routes/authRoutes');
 const employeeRoutes = require('./routes/employeeRoutes');
@@ -91,10 +92,18 @@ const activityLogRoutes = require('./routes/activityLogRoutes');
 const notificationRoutes = require('./routes/notificationRoutes');
 
 >>>>>>> origin/jay
+=======
+const sequelize = require('./config/database');
+const models = require('./models'); // Loads models and associations
+const authRoutes = require('./routes/authRoutes');
+const errorHandler = require('./middleware/errorHandler');
+
+>>>>>>> origin/kashyap
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 // --- Middleware ---
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -113,10 +122,32 @@ app.use(cors({
 <<<<<<< HEAD
 =======
 >>>>>>> origin/jay
+=======
+
+// Global Middleware
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://127.0.0.1:5173',
+  process.env.FRONTEND_URL
+].filter(Boolean);
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+};
+app.use(cors(corsOptions));
+>>>>>>> origin/kashyap
 
 // Parse JSON request bodies
 app.use(express.json());
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 // --- Routes ---
 
@@ -134,10 +165,16 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Health check
 >>>>>>> origin/jay
+=======
+// --- Routes ---
+
+// Health check
+>>>>>>> origin/kashyap
 app.get('/api/health', (req, res) => {
   res.json({ success: true, message: 'AssetFlow API is running', timestamp: new Date().toISOString() });
 });
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 // Auth routes
@@ -179,6 +216,28 @@ app.use('/api/notifications', notificationRoutes);
 
 // --- Error Handling (must be last) ---
 >>>>>>> origin/jay
+=======
+// Auth routes
+app.use('/api/auth', authRoutes);
+
+// Organization routes
+const organizationRoutes = require('./routes/organizationRoutes');
+app.use('/api/organization', organizationRoutes);
+
+// Analytics & Reports routes
+const reportsRoutes = require('./routes/reportsRoutes');
+app.use('/api/reports', reportsRoutes);
+
+// Activity Logs & Notifications routes
+const activityRoutes = require('./routes/activityRoutes');
+app.use('/api/activity', activityRoutes);
+
+// Audit Cycle routes
+const auditRoutes = require('./routes/auditRoutes');
+app.use('/api/audit', auditRoutes);
+
+// --- Error Handling (must be last) ---
+>>>>>>> origin/kashyap
 app.use(errorHandler);
 
 // --- Start Server ---
@@ -186,12 +245,16 @@ const startServer = async () => {
   try {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/jay
+=======
+>>>>>>> origin/kashyap
     // Test database connection
     await sequelize.authenticate();
     console.log('✅ Database connection established successfully.');
 
+<<<<<<< HEAD
     // Sync models (creates tables if they don't exist)
 <<<<<<< HEAD
     await sequelize.sync({ alter: true });
@@ -208,10 +271,16 @@ const startServer = async () => {
     await sequelize.sync({ alter: false });
     console.log('✅ Database models synchronized.');
 >>>>>>> origin/jay
+=======
+    // Sync models (creates tables if they don\'t exist)
+    await sequelize.sync({ alter: false });
+    console.log('✅ Database models synchronized.');
+>>>>>>> origin/kashyap
 
     app.listen(PORT, () => {
       console.log(`🚀 AssetFlow server running on http://localhost:${PORT}`);
       console.log(`📡 CORS enabled for: ${process.env.CLIENT_URL || 'http://localhost:5173'}`);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -219,6 +288,8 @@ const startServer = async () => {
 >>>>>>> origin/prince
 =======
 >>>>>>> origin/jay
+=======
+>>>>>>> origin/kashyap
     });
   } catch (error) {
     console.error('❌ Failed to start server:', error.message);

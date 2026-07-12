@@ -1,6 +1,7 @@
 import { useState } from 'react';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Link, useNavigate } from 'react-router-dom';
 =======
 import { Link } from 'react-router-dom';
@@ -8,10 +9,14 @@ import { Link } from 'react-router-dom';
 =======
 import { Link } from 'react-router-dom';
 >>>>>>> origin/jay
+=======
+import { Link } from 'react-router-dom';
+>>>>>>> origin/kashyap
 import AuthLayout from '../components/AuthLayout';
 import Input from '../components/Input';
 import Button from '../components/Button';
 import { loginUser } from '../services/authService';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 import { useAuth } from '../context/AuthContext';
@@ -19,10 +24,13 @@ import { useAuth } from '../context/AuthContext';
 >>>>>>> origin/prince
 =======
 >>>>>>> origin/jay
+=======
+>>>>>>> origin/kashyap
 import { validateEmail, validateRequired } from '../utils/validators';
 import './Login.css';
 
 export default function Login() {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   const { login } = useAuth();
@@ -31,6 +39,8 @@ export default function Login() {
 >>>>>>> origin/prince
 =======
 >>>>>>> origin/jay
+=======
+>>>>>>> origin/kashyap
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -81,6 +91,7 @@ export default function Login() {
         // JWT stored in localStorage by authService
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         login(result.user, result.token);
         navigate('/dashboard');
 =======
@@ -91,6 +102,9 @@ export default function Login() {
         // Future: redirect to dashboard
         window.location.href = '/';
 >>>>>>> origin/jay
+=======
+        window.location.href = '/dashboard';
+>>>>>>> origin/kashyap
       } else {
         setServerError(result.message || 'Login failed. Please try again.');
       }

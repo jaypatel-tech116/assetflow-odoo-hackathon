@@ -1,5 +1,6 @@
 const bcrypt = require("bcryptjs");
 <<<<<<< HEAD
+<<<<<<< HEAD
 const User = require("../models/User");
 const generateToken = require("../utils/generateToken");
 const { successResponse, errorResponse } = require("../utils/responseHelper");
@@ -10,6 +11,11 @@ const generateToken = require("../utils/generateToken");
 const { successResponse, errorResponse } = require("../utils/responseHelper");
 const logActivity = require("../utils/activityLogger");
 >>>>>>> origin/jay
+=======
+const User = require("../models/User");
+const generateToken = require("../utils/generateToken");
+const { successResponse, errorResponse } = require("../utils/responseHelper");
+>>>>>>> origin/kashyap
 
 /**
  * @desc    Register a new user (always as Employee)
@@ -105,10 +111,13 @@ const register = async (req, res, next) => {
     const safeUser = user.toSafeObject();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     await logActivity(user.id, 'Account Registered', 'Auth', `New employee account: ${user.email}`);
 
 >>>>>>> origin/jay
+=======
+>>>>>>> origin/kashyap
     return successResponse(res, 201, {
       message: "Account created successfully",
       user: safeUser,
@@ -179,6 +188,7 @@ const login = async (req, res, next) => {
   }
 };
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 module.exports = { register, login };
 =======
@@ -316,3 +326,6 @@ const switchSelfRole = async (req, res, next) => {
 
 module.exports = { register, login, getMe, forgotPassword, resetPassword, switchSelfRole };
 >>>>>>> origin/jay
+=======
+module.exports = { register, login };
+>>>>>>> origin/kashyap

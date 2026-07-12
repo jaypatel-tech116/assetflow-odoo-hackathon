@@ -1,0 +1,36 @@
+/* AuditCycle.css */
+
+.audit-form-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.audit-form-grid > .org-form-group {
+  margin-bottom: 0;
+}
+
+/* Adjust span of form fields */
+.audit-form-grid .org-form-group:nth-child(1),
+.audit-form-grid .org-form-group:nth-child(2) {
+  grid-column: span 1;
+}
+
+.audit-form-grid .org-form-group:nth-child(3),
+.audit-form-grid .org-form-group:nth-child(4) {
+  grid-column: span 1;
+}
+
+.audit-form-grid .org-form-group:nth-child(5) {
+  grid-column: span 3;
+}
+
+.auditor-chip {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}

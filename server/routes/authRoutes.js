@@ -1,11 +1,15 @@
 const express = require('express');
 const router = express.Router();
 <<<<<<< HEAD
+<<<<<<< HEAD
 const { register, login } = require('../controllers/authController');
 =======
 const { register, login, getMe, forgotPassword, resetPassword, switchSelfRole } = require('../controllers/authController');
 const { verifyToken } = require('../middleware/authMiddleware');
 >>>>>>> origin/jay
+=======
+const { register, login } = require('../controllers/authController');
+>>>>>>> origin/kashyap
 
 // POST /api/auth/register — Create a new Employee account
 router.post('/register', register);
@@ -13,6 +17,7 @@ router.post('/register', register);
 // POST /api/auth/login — Authenticate and receive JWT
 router.post('/login', login);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 // GET /api/auth/me — Get current user (requires auth)
@@ -28,4 +33,6 @@ router.post('/reset-password', resetPassword);
 router.patch('/self-role', verifyToken, switchSelfRole);
 
 >>>>>>> origin/jay
+=======
+>>>>>>> origin/kashyap
 module.exports = router;

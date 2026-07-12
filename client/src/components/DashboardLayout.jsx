@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
@@ -339,6 +340,21 @@ export default function DashboardLayout() {
       <div className="dashboard-main">
         <Outlet />
 >>>>>>> origin/prince
+=======
+import Sidebar from './Sidebar';
+import TopBar from './TopBar';
+import './DashboardLayout.css';
+
+export default function DashboardLayout({ children }) {
+  return (
+    <div className="dashboard-layout">
+      <Sidebar />
+      <div className="dashboard-main-container">
+        <TopBar />
+        <main className="dashboard-content">
+          {children}
+        </main>
+>>>>>>> origin/kashyap
       </div>
     </div>
   );

@@ -9,6 +9,7 @@ const ActivityLog = sequelize.define('ActivityLog', {
   },
   user_id: {
     type: DataTypes.INTEGER,
+<<<<<<< HEAD
     allowNull: false,
   },
   action: {
@@ -27,10 +28,34 @@ const ActivityLog = sequelize.define('ActivityLog', {
     type: DataTypes.DATE,
     allowNull: false,
     defaultValue: DataTypes.NOW,
+=======
+    allowNull: true,
+  },
+  role: {
+    type: DataTypes.STRING(50),
+    allowNull: true,
+  },
+  action: {
+    type: DataTypes.STRING(50), // Created, Updated, Deleted/Deactivated, Approved, Requested, Allocated/Booked
+    allowNull: false,
+  },
+  module: {
+    type: DataTypes.STRING(50), // Department, Employee, Maintenance, Asset Allocation, Resource Booking, Asset Category
+    allowNull: false,
+  },
+  details: {
+    type: DataTypes.STRING(255),
+    allowNull: false,
+>>>>>>> origin/kashyap
   },
 }, {
   tableName: 'activity_logs',
   timestamps: true,
+<<<<<<< HEAD
+=======
+  createdAt: 'timestamp',
+  updatedAt: false,
+>>>>>>> origin/kashyap
   underscored: true,
 });
 

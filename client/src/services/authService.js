@@ -3,7 +3,11 @@
  * Base URL comes from VITE_API_URL env var, defaults to http://localhost:5000/api
  */
 
+<<<<<<< HEAD
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+=======
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
+>>>>>>> origin/kashyap
 
 /**
  * Login user with email and password.
@@ -116,6 +120,7 @@ export const logoutUser = () => {
   localStorage.removeItem('assetflow_user');
 };
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 /**
@@ -155,3 +160,5 @@ export const resetPassword = async (token, password, confirmPassword) => {
 };
 
 >>>>>>> origin/jay
+=======
+>>>>>>> origin/kashyap

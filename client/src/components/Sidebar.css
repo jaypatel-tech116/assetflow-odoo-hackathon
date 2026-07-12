@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 .sidebar {
@@ -5,14 +6,26 @@
   min-width: 260px;
   height: 100vh;
   background: linear-gradient(180deg, #0f1120 0%, #161a2e 100%);
+=======
+/* ===================== SIDEBAR ===================== */
+.sidebar {
+  width: 250px;
+  min-width: 250px;
+  height: 100vh;
+  background: linear-gradient(180deg, #1e1b4b 0%, #1a1744 100%);
+>>>>>>> origin/kashyap
   display: flex;
   flex-direction: column;
   position: fixed;
   left: 0;
   top: 0;
   z-index: 100;
+<<<<<<< HEAD
   font-family: 'Inter', system-ui, sans-serif;
   overflow-y: auto;
+=======
+  overflow: hidden;
+>>>>>>> origin/kashyap
 }
 
 /* Logo */
@@ -20,15 +33,26 @@
   display: flex;
   align-items: center;
   gap: 12px;
+<<<<<<< HEAD
   padding: 24px 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+=======
+  padding: 20px 20px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+>>>>>>> origin/kashyap
 }
 
 .sidebar-logo-icon {
   width: 40px;
   height: 40px;
+<<<<<<< HEAD
   background: rgba(108, 60, 224, 0.25);
   border-radius: 12px;
+=======
+  min-width: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+>>>>>>> origin/kashyap
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,6 +61,7 @@
 .sidebar-logo-text {
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
 }
 
 .sidebar-logo-name {
@@ -48,21 +73,68 @@
 
 .sidebar-logo-highlight {
   color: #a78bfa;
+=======
+  gap: 1px;
+}
+
+.sidebar-logo-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.3px;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.sidebar-logo-highlight {
+  color: #a5b4fc;
+}
+
+.sidebar-logo-tagline {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.3;
+  letter-spacing: 0;
+>>>>>>> origin/kashyap
 }
 
 /* Navigation */
 .sidebar-nav {
   flex: 1;
+<<<<<<< HEAD
   padding: 16px 12px;
   display: flex;
   flex-direction: column;
   gap: 2px;
+=======
+  overflow-y: auto;
+  padding: 8px 12px;
+  scrollbar-width: none;
+}
+
+.sidebar-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar-section {
+  margin-bottom: 4px;
+}
+
+.sidebar-section-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 14px 12px 6px;
+  margin: 0;
+>>>>>>> origin/kashyap
 }
 
 .sidebar-nav-item {
   display: flex;
   align-items: center;
   gap: 12px;
+<<<<<<< HEAD
   padding: 10px 14px;
   border-radius: 10px;
   color: rgba(255, 255, 255, 0.55);
@@ -98,11 +170,46 @@
 }
 
 .sidebar-nav-label {
+=======
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 13.5px;
+  font-weight: 500;
+  font-family: 'Inter', system-ui, sans-serif;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  position: relative;
+}
+
+.sidebar-nav-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.sidebar-nav-item.active {
+  background: linear-gradient(135deg, #4f46e5, #4338ca);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.35);
+}
+
+.sidebar-nav-item.active svg {
+  opacity: 1;
+}
+
+.sidebar-nav-text {
+  flex: 1;
+>>>>>>> origin/kashyap
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
+<<<<<<< HEAD
 /* Footer */
 .sidebar-footer {
   padding: 16px 20px;
@@ -163,3 +270,75 @@
   }
 }
 
+=======
+.sidebar-nav-badge {
+  background: #ef4444;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+}
+
+/* User Profile */
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: background 0.2s ease;
+  margin-top: auto;
+}
+
+.sidebar-user:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.sidebar-user-avatar {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.sidebar-user-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.sidebar-user-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-user-role {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.sidebar-user-chevron {
+  color: rgba(255, 255, 255, 0.35);
+  flex-shrink: 0;
+}
+>>>>>>> origin/kashyap

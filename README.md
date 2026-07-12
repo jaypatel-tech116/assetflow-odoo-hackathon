@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # assetflow-odoo-hackathon
 AssetFlow — Enterprise Asset &amp; Resource Management System | Odoo Hackathon 2026 Submission | MERN Stack
 =======
@@ -61,3 +62,7 @@ npm run dev
 
 Open `http://localhost:5173` to test the application.
 >>>>>>> origin/jay
+=======
+# assetflow-odoo-hackathon
+AssetFlow — Enterprise Asset &amp; Resource Management System | Odoo Hackathon 2026 Submission | MERN Stack
+>>>>>>> origin/kashyap

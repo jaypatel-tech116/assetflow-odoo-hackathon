@@ -7,6 +7,7 @@ const AuditCycle = sequelize.define('AuditCycle', {
     primaryKey: true,
     autoIncrement: true,
   },
+<<<<<<< HEAD
   cycle_code: {
     type: DataTypes.STRING(30),
     allowNull: false,
@@ -26,6 +27,19 @@ const AuditCycle = sequelize.define('AuditCycle', {
   scope_location: {
     type: DataTypes.STRING(200),
     allowNull: true,
+=======
+  name: {
+    type: DataTypes.STRING(255),
+    allowNull: false,
+  },
+  scope_type: {
+    type: DataTypes.ENUM('Department', 'Location'),
+    allowNull: false,
+  },
+  scope_id: {
+    type: DataTypes.STRING(100),
+    allowNull: false,
+>>>>>>> origin/kashyap
   },
   start_date: {
     type: DataTypes.DATEONLY,
@@ -36,6 +50,7 @@ const AuditCycle = sequelize.define('AuditCycle', {
     allowNull: false,
   },
   status: {
+<<<<<<< HEAD
     type: DataTypes.ENUM('Scheduled', 'In Progress', 'In Review', 'Completed', 'Closed', 'Cancelled'),
     allowNull: false,
     defaultValue: 'Scheduled',
@@ -53,6 +68,11 @@ const AuditCycle = sequelize.define('AuditCycle', {
     type: DataTypes.INTEGER,
     allowNull: false,
     defaultValue: 0,
+=======
+    type: DataTypes.ENUM('Open', 'Closed'),
+    allowNull: false,
+    defaultValue: 'Open',
+>>>>>>> origin/kashyap
   },
 }, {
   tableName: 'audit_cycles',
