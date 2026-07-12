@@ -1,0 +1,129 @@
+.my-assets-page .page-header {
+  margin-bottom: 20px;
+}
+
+.my-assets-page .page-header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1f37;
+  margin: 0 0 4px;
+}
+
+.my-assets-page .page-header p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.assets-toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.assets-search {
+  flex: 1;
+  max-width: 360px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: var(--bg-surface);
+  border: 1px solid #e8e9ef;
+  border-radius: 10px;
+  transition: border-color 0.2s;
+}
+
+.assets-search:focus-within {
+  border-color: var(--primary);
+}
+
+.assets-search input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #1a1f37;
+  background: none;
+}
+
+.assets-search svg {
+  color: var(--text-muted);
+}
+
+.assets-filter {
+  padding: 10px 16px;
+  border: 1px solid #e8e9ef;
+  border-radius: 10px;
+  background: var(--bg-surface);
+  font-size: 14px;
+  color: #4a5568;
+  cursor: pointer;
+  outline: none;
+}
+
+.assets-filter:focus {
+  border-color: var(--primary);
+}
+
+.assets-card {
+  background: var(--bg-surface);
+  border: 1px solid #e8e9ef;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.assets-table td.td-name {
+  font-weight: 600;
+  color: #1a1f37;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-top: 1px solid #f0f0f3;
+}
+
+.pagination-info {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.pagination-btns {
+  display: flex;
+  gap: 4px;
+}
+
+.pagination-btns button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e8e9ef;
+  border-radius: 6px;
+  background: var(--bg-surface);
+  cursor: pointer;
+  font-size: 13px;
+  color: #4a5568;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.pagination-btns button:hover:not(:disabled) {
+  background: #f5f6fa;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.pagination-btns button.active {
+  background: var(--primary);
+  color: var(--text-primary);
+  border-color: var(--primary);
+}
+
+.pagination-btns button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

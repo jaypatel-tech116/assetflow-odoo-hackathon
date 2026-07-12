@@ -1,0 +1,139 @@
+.profile-page .page-header {
+  margin-bottom: 24px;
+}
+
+.profile-page .page-header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1f37;
+  margin: 0 0 4px;
+}
+
+.profile-page .page-header p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.profile-card {
+  background: var(--bg-surface);
+  border: 1px solid #e8e9ef;
+  border-radius: 14px;
+  padding: 28px;
+}
+
+.profile-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1f37;
+  margin: 0 0 20px;
+}
+
+/* Avatar section */
+.profile-avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #f0f0f3;
+}
+
+.profile-avatar-large {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.profile-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1f37;
+  margin: 0 0 6px;
+}
+
+.profile-role-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 20px;
+  background: rgba(108, 60, 224, 0.1);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Profile form */
+.profile-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.profile-card .form-group {
+  margin-bottom: 16px;
+}
+
+.profile-card .form-group input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #e8e9ef;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1a1f37;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.profile-card .form-group input:focus:not(:disabled) {
+  border-color: var(--primary);
+}
+
+.profile-card .form-group input:disabled {
+  background: #f9fafb;
+  color: var(--text-secondary);
+  cursor: not-allowed;
+}
+
+.input-disabled {
+  background: #f9fafb;
+  color: var(--text-muted) !important;
+}
+
+.profile-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.btn-change-pw {
+  background: #ef4444;
+}
+
+.btn-change-pw:hover {
+  background: #dc2626;
+}
+
+@media (max-width: 900px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+  .profile-form-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,10 @@
+import { apiGet, apiPost, apiPatch } from './apiClient';
+export const getMaintenanceRequests = (params = '') => apiGet(`/maintenance${params ? '?' + params : ''}`);
+export const getMaintenanceRequestById = (id) => apiGet(`/maintenance/${id}`);
+export const createMaintenanceRequest = (formData) => apiPost('/maintenance', formData, true);
+export const approveMaintenanceRequest = (id) => apiPatch(`/maintenance/${id}/approve`);
+export const rejectMaintenanceRequest = (id, data) => apiPatch(`/maintenance/${id}/reject`, data);
+export const assignTechnician = (id, data) => apiPatch(`/maintenance/${id}/assign-technician`, data);
+export const startMaintenance = (id) => apiPatch(`/maintenance/${id}/start`);
+export const resolveMaintenance = (id) => apiPatch(`/maintenance/${id}/resolve`);
+export const closeMaintenance = (id) => apiPatch(`/maintenance/${id}/close`);
