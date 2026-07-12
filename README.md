@@ -20,11 +20,11 @@ AssetFlow is a robust Enterprise Asset & Resource Management ERP system built fo
 ### 1. Database Configuration
 Ensure your local MySQL instance is running. Configure credentials in `server/.env`:
 ```env
-DB_HOST=localhost
-DB_PORT=3306
-DB_USER=root
-DB_PASSWORD=Jay1126
-DB_NAME=register_login
+DB_HOST=
+DB_PORT=
+DB_USER=
+DB_PASSWORD=
+DB_NAME=
 ```
 
 ### 2. Install Dependencies & Build
