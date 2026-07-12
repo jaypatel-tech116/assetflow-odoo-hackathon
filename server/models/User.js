@@ -37,6 +37,7 @@ const User = sequelize.define('User', {
     defaultValue: 'Employee',
   },
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   designation: { type: DataTypes.STRING(100), allowNull: true },
   phone: { type: DataTypes.STRING(20), allowNull: true },
@@ -45,6 +46,8 @@ const User = sequelize.define('User', {
   gender: { type: DataTypes.ENUM('Male', 'Female', 'Other'), allowNull: true },
   address: { type: DataTypes.TEXT, allowNull: true },
 >>>>>>> origin/prince
+=======
+>>>>>>> origin/jay
   department_id: {
     type: DataTypes.INTEGER,
     allowNull: true,
@@ -55,6 +58,7 @@ const User = sequelize.define('User', {
     allowNull: false,
     defaultValue: 'Active',
   },
+<<<<<<< HEAD
 <<<<<<< HEAD
   phone: {
     type: DataTypes.STRING(20),
@@ -68,6 +72,18 @@ const User = sequelize.define('User', {
   },
 =======
 >>>>>>> origin/prince
+=======
+  reset_token: {
+    type: DataTypes.STRING(255),
+    allowNull: true,
+    defaultValue: null,
+  },
+  reset_token_expires: {
+    type: DataTypes.DATE,
+    allowNull: true,
+    defaultValue: null,
+  },
+>>>>>>> origin/jay
 }, {
   tableName: 'users',
   timestamps: true,

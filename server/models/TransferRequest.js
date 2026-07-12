@@ -7,6 +7,7 @@ const TransferRequest = sequelize.define('TransferRequest', {
     primaryKey: true,
     autoIncrement: true,
   },
+<<<<<<< HEAD
   request_id: {
     type: DataTypes.STRING(20),
     allowNull: false,
@@ -40,16 +41,54 @@ const TransferRequest = sequelize.define('TransferRequest', {
     type: DataTypes.ENUM('Pending', 'Approved', 'Completed', 'Rejected'),
     allowNull: false,
     defaultValue: 'Pending',
+=======
+  asset_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  requested_by: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  current_holder_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  requested_to_employee_id: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+  },
+  requested_to_department_id: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+  },
+  status: {
+    type: DataTypes.ENUM('Requested', 'Approved', 'Rejected', 'Re-allocated'),
+    allowNull: false,
+    defaultValue: 'Requested',
+  },
+  approved_by: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+>>>>>>> origin/jay
   },
   requested_on: {
     type: DataTypes.DATEONLY,
     allowNull: false,
     defaultValue: DataTypes.NOW,
   },
+<<<<<<< HEAD
+=======
+  resolved_on: {
+    type: DataTypes.DATEONLY,
+    allowNull: true,
+  },
+>>>>>>> origin/jay
 }, {
   tableName: 'transfer_requests',
   timestamps: true,
   underscored: true,
+<<<<<<< HEAD
   hooks: {
     beforeCreate: async (request) => {
       if (!request.request_id) {
@@ -58,6 +97,8 @@ const TransferRequest = sequelize.define('TransferRequest', {
       }
     },
   },
+=======
+>>>>>>> origin/jay
 });
 
 module.exports = TransferRequest;

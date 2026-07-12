@@ -1,0 +1,12 @@
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; z-index: 500; animation: fadeIn 0.15s ease; }
+.modal-content { background: #fff; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); max-height: 90vh; overflow-y: auto; animation: slideUp 0.2s ease; }
+.modal-content--small { width: 400px; }
+.modal-content--medium { width: 560px; }
+.modal-content--large { width: 720px; }
+.modal-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; border-bottom: 1px solid #f3f4f6; }
+.modal-title { margin: 0; font-size: 18px; font-weight: 600; color: #1e1e2f; }
+.modal-close { border: none; background: #f3f4f6; width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #6b7280; transition: all 0.15s; }
+.modal-close:hover { background: #e5e7eb; color: #1e1e2f; }
+.modal-body { padding: 24px; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }

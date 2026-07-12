@@ -115,3 +115,43 @@ export const logoutUser = () => {
   localStorage.removeItem('assetflow_token');
   localStorage.removeItem('assetflow_user');
 };
+<<<<<<< HEAD
+=======
+
+/**
+ * Request password reset link.
+ */
+export const forgotPassword = async (email) => {
+  try {
+    const response = await fetch(`${API_URL}/auth/forgot-password`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Forgot password error:', error);
+    return { success: false, message: 'Server connection failed.' };
+  }
+};
+
+/**
+ * Reset password using token.
+ */
+export const resetPassword = async (token, password, confirmPassword) => {
+  try {
+    const response = await fetch(`${API_URL}/auth/reset-password`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token, password, confirm_password: confirmPassword }),
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Reset password error:', error);
+    return { success: false, message: 'Server connection failed.' };
+  }
+};
+
+>>>>>>> origin/jay

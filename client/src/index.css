@@ -54,6 +54,13 @@ body {
   margin: 0;
 }
 
+<<<<<<< HEAD
+=======
+* {
+  box-sizing: border-box;
+}
+
+>>>>>>> origin/jay
 #root {
   max-width: 100%;
   margin: 0;
