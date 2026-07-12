@@ -1,16 +1,26 @@
 import { useState } from 'react';
+<<<<<<< HEAD
 import { Link, useNavigate } from 'react-router-dom';
+=======
+import { Link } from 'react-router-dom';
+>>>>>>> origin/prince
 import AuthLayout from '../components/AuthLayout';
 import Input from '../components/Input';
 import Button from '../components/Button';
 import { loginUser } from '../services/authService';
+<<<<<<< HEAD
 import { useAuth } from '../context/AuthContext';
+=======
+>>>>>>> origin/prince
 import { validateEmail, validateRequired } from '../utils/validators';
 import './Login.css';
 
 export default function Login() {
+<<<<<<< HEAD
   const { login } = useAuth();
   const navigate = useNavigate();
+=======
+>>>>>>> origin/prince
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -59,8 +69,13 @@ export default function Login() {
 
       if (result.success) {
         // JWT stored in localStorage by authService
+<<<<<<< HEAD
         login(result.user, result.token);
         navigate('/dashboard');
+=======
+        window.location.href = '/dashboard';
+
+>>>>>>> origin/prince
       } else {
         setServerError(result.message || 'Login failed. Please try again.');
       }

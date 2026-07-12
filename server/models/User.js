@@ -36,6 +36,15 @@ const User = sequelize.define('User', {
     allowNull: false,
     defaultValue: 'Employee',
   },
+<<<<<<< HEAD
+=======
+  designation: { type: DataTypes.STRING(100), allowNull: true },
+  phone: { type: DataTypes.STRING(20), allowNull: true },
+  alternate_phone: { type: DataTypes.STRING(20), allowNull: true },
+  date_of_birth: { type: DataTypes.DATEONLY, allowNull: true },
+  gender: { type: DataTypes.ENUM('Male', 'Female', 'Other'), allowNull: true },
+  address: { type: DataTypes.TEXT, allowNull: true },
+>>>>>>> origin/prince
   department_id: {
     type: DataTypes.INTEGER,
     allowNull: true,
@@ -46,6 +55,7 @@ const User = sequelize.define('User', {
     allowNull: false,
     defaultValue: 'Active',
   },
+<<<<<<< HEAD
   phone: {
     type: DataTypes.STRING(20),
     allowNull: true,
@@ -56,6 +66,8 @@ const User = sequelize.define('User', {
     allowNull: true,
     defaultValue: null,
   },
+=======
+>>>>>>> origin/prince
 }, {
   tableName: 'users',
   timestamps: true,
