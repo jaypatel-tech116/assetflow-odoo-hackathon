@@ -115,6 +115,7 @@ export const logoutUser = () => {
   localStorage.removeItem('assetflow_token');
   localStorage.removeItem('assetflow_user');
 };
+<<<<<<< HEAD
 
 /**
  * Request password reset link.
@@ -152,3 +153,5 @@ export const resetPassword = async (token, password, confirmPassword) => {
   }
 };
 
+=======
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9

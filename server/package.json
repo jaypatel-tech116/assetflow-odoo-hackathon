@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
+<<<<<<< HEAD
     "seed": "node scripts/seed.js",
+=======
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -19,10 +22,15 @@
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
+<<<<<<< HEAD
     "multer": "^2.2.0",
     "mysql2": "^3.22.6",
     "sequelize": "^6.37.8",
     "sqlite3": "^6.0.1"
+=======
+    "mysql2": "^3.22.6",
+    "sequelize": "^6.37.8"
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
   },
   "devDependencies": {
     "nodemon": "^3.1.14"

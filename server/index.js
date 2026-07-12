@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const express = require('express');
 const cors = require('cors');
+<<<<<<< HEAD
 const path = require('path');
 const { sequelize } = require('./models');
 const errorHandler = require('./middleware/errorHandler');
@@ -21,6 +22,11 @@ const auditRoutes = require('./routes/auditRoutes');
 const reportRoutes = require('./routes/reportRoutes');
 const activityLogRoutes = require('./routes/activityLogRoutes');
 const notificationRoutes = require('./routes/notificationRoutes');
+=======
+const sequelize = require('./config/database');
+const authRoutes = require('./routes/authRoutes');
+const errorHandler = require('./middleware/errorHandler');
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -36,9 +42,12 @@ app.use(cors({
 // Parse JSON request bodies
 app.use(express.json());
 
+<<<<<<< HEAD
 // Serve uploaded files statically
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+=======
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
 // --- Routes ---
 
 // Health check
@@ -49,6 +58,7 @@ app.get('/api/health', (req, res) => {
 // Auth routes
 app.use('/api/auth', authRoutes);
 
+<<<<<<< HEAD
 // Protected module routes
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/departments', departmentRoutes);
@@ -65,6 +75,8 @@ app.use('/api/activity-logs', activityLogRoutes);
 app.use('/api/notifications', notificationRoutes);
 app.use('/api/employee', require('./routes/employeeRoutes'));
 
+=======
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
 // --- Error Handling (must be last) ---
 app.use(errorHandler);
 
@@ -75,7 +87,11 @@ const startServer = async () => {
     await sequelize.authenticate();
     console.log('✅ Database connection established successfully.');
 
+<<<<<<< HEAD
     // Sync models (creates tables if they don't exist)
+=======
+    // Sync models (creates tables if they don\'t exist)
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
     await sequelize.sync({ alter: false });
     console.log('✅ Database models synchronized.');
 

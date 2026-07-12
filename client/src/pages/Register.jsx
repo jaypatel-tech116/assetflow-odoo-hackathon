@@ -98,7 +98,11 @@ export default function Register() {
       <div className="register-card">
         {/* Logo Icon */}
         <div className="register-logo-icon">
+<<<<<<< HEAD
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+=======
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6c3ce0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
             <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/>
             <circle cx="8.5" cy="7" r="4"/>
             <line x1="20" y1="8" x2="20" y2="14"/>
@@ -269,5 +273,8 @@ export default function Register() {
     </AuthLayout>
   );
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9

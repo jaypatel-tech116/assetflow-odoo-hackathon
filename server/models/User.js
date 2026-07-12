@@ -46,6 +46,7 @@ const User = sequelize.define('User', {
     allowNull: false,
     defaultValue: 'Active',
   },
+<<<<<<< HEAD
   reset_token: {
     type: DataTypes.STRING(255),
     allowNull: true,
@@ -56,6 +57,8 @@ const User = sequelize.define('User', {
     allowNull: true,
     defaultValue: null,
   },
+=======
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
 }, {
   tableName: 'users',
   timestamps: true,

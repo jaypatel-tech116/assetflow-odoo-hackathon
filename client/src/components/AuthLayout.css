@@ -4,14 +4,23 @@
 .auth-layout {
   display: flex;
   min-height: 100vh;
+<<<<<<< HEAD
   font-family: var(--font-sans);
+=======
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
 }
 
 /* ===================== LEFT PANEL ===================== */
 .auth-left {
   flex: 0 0 45%;
+<<<<<<< HEAD
   background: linear-gradient(160deg, #0a0a0a 0%, var(--primary-dark) 40%, var(--accent) 100%);
   color: #ffffff;
+=======
+  background: linear-gradient(160deg, #0f0a2e 0%, #1a0e3e 40%, #2d1b69 100%);
+  color: #fff;
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,7 +36,11 @@
   right: -30%;
   width: 80%;
   height: 100%;
+<<<<<<< HEAD
   background: radial-gradient(ellipse, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+=======
+  background: radial-gradient(ellipse, rgba(108, 60, 224, 0.15) 0%, transparent 70%);
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
   pointer-events: none;
 }
 
@@ -38,7 +51,11 @@
   left: -10%;
   width: 60%;
   height: 60%;
+<<<<<<< HEAD
   background: radial-gradient(ellipse, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+=======
+  background: radial-gradient(ellipse, rgba(108, 60, 224, 0.1) 0%, transparent 70%);
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
   pointer-events: none;
 }
 
@@ -53,7 +70,11 @@
   left: 0;
   right: 0;
   height: 120px;
+<<<<<<< HEAD
   background: linear-gradient(to top, rgba(10, 10, 10, 0.8), transparent);
+=======
+  background: linear-gradient(to top, rgba(15, 10, 46, 0.8), transparent);
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
   pointer-events: none;
 }
 
@@ -66,16 +87,26 @@
 }
 
 .auth-logo-icon {
+<<<<<<< HEAD
   width: 48px;
   height: 48px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-md);
+=======
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
   display: flex;
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.08);
+<<<<<<< HEAD
   box-shadow: var(--shadow-glow);
+=======
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
 }
 
 .auth-logo-text {
@@ -84,6 +115,7 @@
 }
 
 .auth-logo-name {
+<<<<<<< HEAD
   font-size: 24px;
   font-weight: 800;
   letter-spacing: -0.5px;
@@ -97,6 +129,20 @@
 .auth-logo-tagline {
   font-size: var(--text-xs);
   color: rgba(255, 255, 255, 0.6);
+=======
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.auth-logo-highlight {
+  color: #a78bfa;
+}
+
+.auth-logo-tagline {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
   line-height: 1.3;
   margin-top: 2px;
 }
@@ -107,27 +153,46 @@
 }
 
 .auth-headline h1 {
+<<<<<<< HEAD
   font-size: 42px;
+=======
+  font-size: 38px;
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
   font-weight: 800;
   line-height: 1.15;
   margin: 0 0 16px;
   letter-spacing: -1px;
+<<<<<<< HEAD
   color: #ffffff;
   font-family: var(--font-heading);
 }
 
 .auth-headline-accent {
   background: linear-gradient(135deg, var(--primary-light), var(--accent));
+=======
+  color: #fff;
+}
+
+.auth-headline-accent {
+  background: linear-gradient(135deg, #a78bfa, #818cf8, #6366f1);
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .auth-subtitle {
+<<<<<<< HEAD
   font-size: var(--text-base);
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.6;
   max-width: 400px;
+=======
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  max-width: 380px;
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
 }
 
 /* Features */
@@ -140,6 +205,7 @@
 .auth-feature {
   display: flex;
   align-items: flex-start;
+<<<<<<< HEAD
   gap: 16px;
   padding: 16px;
   border-radius: var(--radius-lg);
@@ -164,11 +230,37 @@
   align-items: center;
   justify-content: center;
   color: var(--primary-light);
+=======
+  gap: 14px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.auth-feature:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.auth-feature-icon {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 10px;
+  background: rgba(167, 139, 250, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a78bfa;
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
 }
 
 .auth-feature div:last-child {
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   gap: 4px;
 }
 
@@ -181,6 +273,20 @@
 .auth-feature span {
   font-size: var(--text-xs);
   color: rgba(255, 255, 255, 0.5);
+=======
+  gap: 2px;
+}
+
+.auth-feature strong {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.auth-feature span {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.45);
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
 }
 
 /* ===================== RIGHT PANEL ===================== */
@@ -189,7 +295,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
   background: var(--bg-main);
+=======
+  background: #f8f7fc;
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
   padding: 40px 24px;
   overflow-y: auto;
 }
@@ -207,11 +317,19 @@
 
   .auth-left {
     flex: none;
+<<<<<<< HEAD
     padding: 40px 24px;
   }
 
   .auth-headline h1 {
     font-size: 32px;
+=======
+    padding: 32px 24px;
+  }
+
+  .auth-headline h1 {
+    font-size: 28px;
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
   }
 
   .auth-features {
@@ -225,6 +343,7 @@
 
 @media (max-width: 480px) {
   .auth-left {
+<<<<<<< HEAD
     padding: 32px 20px;
   }
 
@@ -234,6 +353,17 @@
 
   .auth-subtitle {
     font-size: var(--text-sm);
+=======
+    padding: 24px 20px;
+  }
+
+  .auth-headline h1 {
+    font-size: 24px;
+  }
+
+  .auth-subtitle {
+    font-size: 13px;
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
   }
 
   .auth-right {

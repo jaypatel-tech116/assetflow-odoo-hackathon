@@ -1,9 +1,15 @@
 const bcrypt = require("bcryptjs");
+<<<<<<< HEAD
 const crypto = require("crypto");
 const User = require("../models/User");
 const generateToken = require("../utils/generateToken");
 const { successResponse, errorResponse } = require("../utils/responseHelper");
 const logActivity = require("../utils/activityLogger");
+=======
+const User = require("../models/User");
+const generateToken = require("../utils/generateToken");
+const { successResponse, errorResponse } = require("../utils/responseHelper");
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
 
 /**
  * @desc    Register a new user (always as Employee)
@@ -98,8 +104,11 @@ const register = async (req, res, next) => {
     // Return sanitized user (no password_hash due to default scope)
     const safeUser = user.toSafeObject();
 
+<<<<<<< HEAD
     await logActivity(user.id, 'Account Registered', 'Auth', `New employee account: ${user.email}`);
 
+=======
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
     return successResponse(res, 201, {
       message: "Account created successfully",
       user: safeUser,
@@ -170,6 +179,7 @@ const login = async (req, res, next) => {
   }
 };
 
+<<<<<<< HEAD
 /**
  * @desc    Get current authenticated user
  * @route   GET /api/auth/me
@@ -277,3 +287,6 @@ const resetPassword = async (req, res, next) => {
 };
 
 module.exports = { register, login, getMe, forgotPassword, resetPassword };
+=======
+module.exports = { register, login };
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9

@@ -74,8 +74,13 @@ export default function Login() {
         {/* Logo Icon */}
         <div className="login-logo-icon">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<<<<<<< HEAD
             <path d="M12 2L4 6V12C4 16.42 7.4 20.74 12 22C16.6 20.74 20 16.42 20 12V6L12 2Z" fill="var(--primary)" opacity="0.2"/>
             <path d="M12 5L7 7.5V12C7 15.04 9.16 18.06 12 19C14.84 18.06 17 15.04 17 12V7.5L12 5Z" fill="var(--primary)"/>
+=======
+            <path d="M12 2L4 6V12C4 16.42 7.4 20.74 12 22C16.6 20.74 20 16.42 20 12V6L12 2Z" fill="#6c3ce0" opacity="0.2"/>
+            <path d="M12 5L7 7.5V12C7 15.04 9.16 18.06 12 19C14.84 18.06 17 15.04 17 12V7.5L12 5Z" fill="#6c3ce0"/>
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
             <path d="M10 12L11.5 13.5L14.5 10.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </div>
@@ -172,5 +177,8 @@ export default function Login() {
     </AuthLayout>
   );
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9

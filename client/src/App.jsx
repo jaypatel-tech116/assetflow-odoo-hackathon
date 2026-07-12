@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+<<<<<<< HEAD
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import AppLayout from './components/AppLayout';
@@ -41,10 +42,15 @@ import BookResource from './pages/BookResource/BookResource';
 import Profile from './pages/Profile/Profile';
 import Notifications from './pages/Notifications/Notifications';
 
+=======
+import Login from './pages/Login';
+import Register from './pages/Register';
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
 import './App.css';
 
 function App() {
   return (
+<<<<<<< HEAD
     <AuthProvider>
       <BrowserRouter>
         <Routes>
@@ -102,6 +108,16 @@ function App() {
         </Routes>
       </BrowserRouter>
     </AuthProvider>
+=======
+    <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/" element={<Navigate to="/login" replace />} />
+        <Route path="*" element={<Navigate to="/login" replace />} />
+      </Routes>
+    </BrowserRouter>
+>>>>>>> 879dbf2bd635ae5d9b416f4693c99acc2a2408c9
   );
 }
 
