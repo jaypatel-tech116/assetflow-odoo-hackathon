@@ -1,7 +1,9 @@
 const bcrypt = require("bcryptjs");
+const crypto = require("crypto");
 const User = require("../models/User");
 const generateToken = require("../utils/generateToken");
 const { successResponse, errorResponse } = require("../utils/responseHelper");
+const logActivity = require("../utils/activityLogger");
 
 /**
  * @desc    Register a new user (always as Employee)
@@ -96,6 +98,8 @@ const register = async (req, res, next) => {
     // Return sanitized user (no password_hash due to default scope)
     const safeUser = user.toSafeObject();
 
+    await logActivity(user.id, 'Account Registered', 'Auth', `New employee account: ${user.email}`);
+
     return successResponse(res, 201, {
       message: "Account created successfully",
       user: safeUser,
@@ -166,4 +170,136 @@ const login = async (req, res, next) => {
   }
 };
 
-module.exports = { register, login };
+/**
+ * @desc    Get current authenticated user
+ * @route   GET /api/auth/me
+ * @access  Private
+ */
+const getMe = async (req, res, next) => {
+  try {
+    const user = await User.findByPk(req.user.id, {
+      include: [{
+        model: require('../models/Department'),
+        as: 'department',
+        attributes: ['id', 'name'],
+      }],
+    });
+    if (!user) {
+      return errorResponse(res, 404, 'User not found');
+    }
+    return successResponse(res, 200, { user });
+  } catch (err) {
+    next(err);
+  }
+};
+
+/**
+ * @desc    Request password reset
+ * @route   POST /api/auth/forgot-password
+ * @access  Public
+ */
+const forgotPassword = async (req, res, next) => {
+  try {
+    const { email } = req.body;
+    if (!email) return errorResponse(res, 400, 'Email is required');
+
+    const user = await User.scope('withPassword').findOne({
+      where: { email: email.toLowerCase().trim() },
+    });
+
+    // Always return success to prevent email enumeration
+    if (!user) {
+      return successResponse(res, 200, { message: 'If an account exists, a reset link has been sent' });
+    }
+
+    // Generate reset token
+    const resetToken = crypto.randomBytes(32).toString('hex');
+    const resetExpires = new Date(Date.now() + 60 * 60 * 1000); // 1 hour
+
+    await user.update({
+      reset_token: resetToken,
+      reset_token_expires: resetExpires,
+    });
+
+    // In production, send email here. For now, return token in response for demo.
+    return successResponse(res, 200, {
+      message: 'If an account exists, a reset link has been sent',
+      // DEV ONLY — remove in production
+      resetToken,
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+
+/**
+ * @desc    Reset password using token
+ * @route   POST /api/auth/reset-password
+ * @access  Public
+ */
+const resetPassword = async (req, res, next) => {
+  try {
+    const { token, password, confirm_password } = req.body;
+    if (!token || !password || !confirm_password) {
+      return errorResponse(res, 400, 'Token, password, and confirm_password are required');
+    }
+    if (password !== confirm_password) {
+      return errorResponse(res, 400, 'Passwords do not match');
+    }
+    if (password.length < 8) {
+      return errorResponse(res, 400, 'Password must be at least 8 characters');
+    }
+
+    const user = await User.scope('withPassword').findOne({
+      where: {
+        reset_token: token,
+        reset_token_expires: { [require('sequelize').Op.gt]: new Date() },
+      },
+    });
+
+    if (!user) {
+      return errorResponse(res, 400, 'Invalid or expired reset token');
+    }
+
+    const salt = await bcrypt.genSalt(12);
+    const password_hash = await bcrypt.hash(password, salt);
+
+    await user.update({
+      password_hash,
+      reset_token: null,
+      reset_token_expires: null,
+    });
+
+    return successResponse(res, 200, { message: 'Password reset successfully' });
+  } catch (err) {
+    next(err);
+  }
+};
+
+/**
+ * @desc    Switch self role (for developer demo / hackathon ease of testing)
+ * @route   PATCH /api/auth/self-role
+ * @access  Private
+ */
+const switchSelfRole = async (req, res, next) => {
+  try {
+    const { role } = req.body;
+    const validRoles = ['Employee', 'Department Head', 'Asset Manager', 'Admin'];
+    if (!role || !validRoles.includes(role)) {
+      return errorResponse(res, 400, `Role must be one of: ${validRoles.join(', ')}`);
+    }
+    const user = await User.findByPk(req.user.id);
+    if (!user) return errorResponse(res, 404, 'User not found');
+    await user.update({ role });
+    const token = generateToken(user);
+    return successResponse(res, 200, {
+      message: `Role successfully switched to ${role}`,
+      token,
+      user: user.toSafeObject(),
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+
+module.exports = { register, login, getMe, forgotPassword, resetPassword, switchSelfRole };

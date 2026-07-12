@@ -1,0 +1,190 @@
+.audit-detail-page {
+  max-width: 1200px;
+}
+
+.audit-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.audit-code-badge {
+  display: inline-flex;
+  padding: 4px 10px;
+  background: #f3e8ff;
+  color: #6c3ce0;
+  border-radius: 6px;
+  font-size: 12.5px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.audit-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.audit-progress-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  margin-bottom: 24px;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.progress-info h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e1e2f;
+}
+
+.progress-percentage {
+  font-size: 14px;
+  font-weight: 700;
+  color: #6c3ce0;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 8px;
+  background: #f3f4f6;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6c3ce0, #a78bfa);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.progress-counts {
+  margin: 0;
+  font-size: 12.5px;
+  color: #6b7280;
+}
+
+.audit-content-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 20px;
+}
+
+.audit-assets-section, .audit-discrepancies-section {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.audit-assets-section h3, .audit-discrepancies-section h3 {
+  margin: 0 0 16px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e1e2f;
+}
+
+.audit-assets-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.audit-asset-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #f3f4f6;
+  border-radius: 10px;
+  transition: background 0.15s;
+}
+
+.audit-asset-item:hover {
+  background: #faf5ff;
+}
+
+.audit-asset-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.asset-tag {
+  font-size: 12px;
+  font-weight: 700;
+  color: #6c3ce0;
+}
+
+.asset-name {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #1e1e2f;
+}
+
+.asset-loc {
+  font-size: 11.5px;
+  color: #6b7280;
+}
+
+.verified-status-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.discrepancy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.discrepancy-card {
+  border: 1.5px dashed #fca5a5;
+  background: #fff8f8;
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.discrepancy-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.discrepancy-notes {
+  margin: 0;
+  font-size: 12.5px;
+  color: #4b5563;
+  line-height: 1.4;
+}
+
+.discrepancy-time {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+@media (max-width: 768px) {
+  .audit-content-layout {
+    grid-template-columns: 1fr;
+  }
+}
